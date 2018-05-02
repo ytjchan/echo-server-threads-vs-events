@@ -1,16 +1,19 @@
+import java.io.PrintWriter;
+import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.Date;
+import java.net.Socket;
 
-public class CurlThread extends Thread {
+public class SocketThread extends Thread {
 
   private static int count = 0;
 
-  private String ip = "143.89.104.188";
+  private String ip = "localhost";
   private String port = "8080";
   private int num;
   private long timeUsed;
 
-  public CurlThread(String... args) {
+  public SocketThread(String... args) {
     if (args.length>0) {
       ip = args[0];
       if (args.length>1)
@@ -23,7 +26,12 @@ public class CurlThread extends Thread {
   public void run() {
     Date t1 = new Date();
     try {
-      Runtime.getRuntime().exec("curl "+ip+":"+port);
+      Socket s = new Socket(ip, Integer.parseInt(port));
+      PrintWriter out = 
+        new PrintWriter(s.getOutputStream(), true);
+      out.append("Thread "+num+" testing...");
+      out.flush();
+      out.close();
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -41,4 +49,7 @@ public class CurlThread extends Thread {
       System.out.println("Thread "+num+" finished in "+timeUsed);
   }
 
+  public static void main(String[] args) {
+    new SocketThread().run();
+  }
 }

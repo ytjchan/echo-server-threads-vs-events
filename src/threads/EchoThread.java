@@ -3,8 +3,6 @@ package threads;
 import java.io.IOException;
 import java.net.Socket;
 
-import events.EchoServer;
-
 public class EchoThread extends Thread {
 	
 	Socket socket;
@@ -26,11 +24,6 @@ public class EchoThread extends Thread {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public static void main(String[] args) {
-		EchoServer es = new EchoServer(args.length>0?Integer.parseInt(args[0]):8080);
-		es.run();
 	}
 	
 }

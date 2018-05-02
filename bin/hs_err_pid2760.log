@@ -1,0 +1,396 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f6fc510e657, pid=2760, tid=0x00007f6fdca20700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_151-b12) (build 1.8.0_151-8u151-b12-0ubuntu0.16.04.2-b12)
+# Java VM: OpenJDK 64-Bit Server VM (25.151-b12 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# J 16 C1 java.util.Arrays.copyOfRange([CII)[C (63 bytes) @ 0x00007f6fc510e657 [0x00007f6fc510e560+0xf7]
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f6fd4009800):  JavaThread "main" [_thread_in_Java, id=2761, stack(0x00007f6fdc920000,0x00007f6fdca21000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 2 (SEGV_ACCERR), si_addr: 0x00000000eb9ea430
+
+Registers:
+RAX=0x00000000eb9e9c18, RBX=0x0000000000000000, RCX=0x000000002000003f, RDX=0x00000001000001f8
+RSP=0x00007f6fdca1f790, RBP=0x00007f6fdca1f960, RSI=0x0000000000000102, RDI=0x0000000000000407
+R8 =0x00000000eb9e93e0, R9 =0x0000000000000000, R10=0x00007f6fdbbc2880, R11=0x0000000000000407
+R12=0x0000000000000000, R13=0x00007f6fdca1f910, R14=0x00007f6fdca1f9b8, R15=0x00007f6fd4009800
+RIP=0x00007f6fc510e657, EFLAGS=0x0000000000010202, CSGSFS=0x00000053002b0033, ERR=0x0000000000000000
+  TRAPNO=0x0000000000000000
+
+Top of Stack: (sp=0x00007f6fdca1f790)
+0x00007f6fdca1f790:   0000000100026c80 00000000eb209c50
+0x00007f6fdca1f7a0:   00007f6fdca1f960 00007f6fc51b1034
+0x00007f6fdca1f7b0:   00000000eb9e5e88 ffffffffffffffff
+0x00007f6fdca1f7c0:   00000000eb2937c0 00000000eb2959d8
+0x00007f6fdca1f7d0:   0000000000000016 0000000000000001
+0x00007f6fdca1f7e0:   00000000eb205e48 0000000000000000
+0x00007f6fdca1f7f0:   00007f6fdca1f960 00007f6fc519302c
+0x00007f6fdca1f800:   00007f6fdca1f960 00007f6fc5152dd4
+0x00007f6fdca1f810:   00000000eb9e3ca0 00000000eb9e8740
+0x00007f6fdca1f820:   0000040000000000 00000000eb215fe8
+0x00007f6fdca1f830:   00007f6fdca1f960 00007f6fc510f994
+0x00007f6fdca1f840:   000000000000000a 00007f6fc51a107f
+0x00007f6fdca1f850:   00007f6fdca1f960 00007f6fc51b04ac
+0x00007f6fdca1f860:   00000000eb9e8b78 00000000eb295d78
+0x00007f6fdca1f870:   00007f6fdca1f960 00000000eb9e9c00
+0x00007f6fdca1f880:   00007f6fdca1f960 00007f6fc515a4dc
+0x00007f6fdca1f890:   0000000000000400 00007f6fc51a06fe
+0x00007f6fdca1f8a0:   00007f6fdca1f960 00007f6fc5127b14
+0x00007f6fdca1f8b0:   00000000eb9e84f0 00000000eb9e8740
+0x00007f6fdca1f8c0:   00007f6f00000400 00000000eb9e8bb8
+0x00007f6fdca1f8d0:   00000000eb9e93e0 00000000eb9e8bb8
+0x00007f6fdca1f8e0:   00000000eb9e9c00 00007f6fc5007ffd
+0x00007f6fdca1f8f0:   00007f6fdca1f960 00007f6fc5007d80
+0x00007f6fdca1f900:   00007f6fc5007d80 00007f6fc5007d80
+0x00007f6fdca1f910:   00000000eb9e8b60 00000000eb21daf0
+0x00007f6fdca1f920:   00007f6fdca1f920 00007f6fc4c00a96
+0x00007f6fdca1f930:   00007f6fdca1f9b8 00007f6fc4c01028
+0x00007f6fdca1f940:   0000000000000000 00007f6fc4c00bc8
+0x00007f6fdca1f950:   00007f6fdca1f910 00007f6fdca1f9b8
+0x00007f6fdca1f960:   00007f6fdca1fa00 00007f6fc5007ffd
+0x00007f6fdca1f970:   00000000eb9e8710 00000000eb9e5f20
+0x00007f6fdca1f980:   00000000eb9e8210 00000000eb9e6050 
+
+Instructions: (pc=0x00007f6fc510e657)
+0x00007f6fc510e637:   00 00 48 8b ca 48 c1 e9 03 89 48 08 89 58 0c 48
+0x00007f6fc510e647:   83 ee 10 0f 84 11 00 00 00 48 33 db 48 c1 ee 03
+0x00007f6fc510e657:   48 89 5c f0 08 48 ff ce 75 f6 41 8b 70 0c 41 2b
+0x00007f6fc510e667:   f1 48 ba 20 0f a5 c4 6f 7f 00 00 48 83 82 08 02 
+
+Register to memory mapping:
+
+RAX=0x00000000eb9e9c18 is an oop
+[C 
+ - klass: {type array char}
+ - length: 1031
+RBX=0x0000000000000000 is an unknown value
+RCX=0x000000002000003f is an unknown value
+RDX=0x00000001000001f8 is pointing into metadata
+RSP=0x00007f6fdca1f790 is pointing into the stack for thread: 0x00007f6fd4009800
+RBP=0x00007f6fdca1f960 is pointing into the stack for thread: 0x00007f6fd4009800
+RSI=0x0000000000000102 is an unknown value
+RDI=0x0000000000000407 is an unknown value
+R8 =0x00000000eb9e93e0 is an oop
+[C 
+ - klass: {type array char}
+ - length: 1031
+R9 =0x0000000000000000 is an unknown value
+R10=0x00007f6fdbbc2880: <offset 0xf32880> in /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so at 0x00007f6fdac90000
+R11=0x0000000000000407 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x00007f6fdca1f910 is pointing into the stack for thread: 0x00007f6fd4009800
+R14=0x00007f6fdca1f9b8 is pointing into the stack for thread: 0x00007f6fd4009800
+R15=0x00007f6fd4009800 is a thread
+
+
+Stack: [0x00007f6fdc920000,0x00007f6fdca21000],  sp=0x00007f6fdca1f790,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J 16 C1 java.util.Arrays.copyOfRange([CII)[C (63 bytes) @ 0x00007f6fc510e657 [0x00007f6fc510e560+0xf7]
+J 17 C1 java.lang.String.<init>([CII)V (82 bytes) @ 0x00007f6fc510f994 [0x00007f6fc510f7a0+0x1f4]
+J 43 C1 java.lang.StringBuilder.toString()Ljava/lang/String; (17 bytes) @ 0x00007f6fc5127b14 [0x00007f6fc5127a40+0xd4]
+j  events.EchoServer.run()V+254
+j  events.EchoServer.main([Ljava/lang/String;)V+26
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x66287b]
+V  [libjvm.so+0x68452e]
+V  [libjvm.so+0x686e5f]
+C  [libjli.so+0x3552]
+C  [libjli.so+0x73dd]
+C  [libpthread.so.0+0x76ba]  start_thread+0xca
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f6fd40e1000 JavaThread "Service Thread" daemon [_thread_blocked, id=2773, stack(0x00007f6fbd120000,0x00007f6fbd221000)]
+  0x00007f6fd40b1800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=2772, stack(0x00007f6fbd230000,0x00007f6fbd331000)]
+  0x00007f6fd40b0000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=2771, stack(0x00007f6fbd340000,0x00007f6fbd441000)]
+  0x00007f6fd40ad000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=2770, stack(0x00007f6fbd450000,0x00007f6fbd551000)]
+  0x00007f6fd40ab000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2769, stack(0x00007f6fbd560000,0x00007f6fbd661000)]
+  0x00007f6fd4083800 JavaThread "Finalizer" daemon [_thread_blocked, id=2768, stack(0x00007f6fbd800000,0x00007f6fbd901000)]
+  0x00007f6fd407f000 JavaThread "Reference Handler" daemon [_thread_blocked, id=2767, stack(0x00007f6fbd910000,0x00007f6fbda11000)]
+=>0x00007f6fd4009800 JavaThread "main" [_thread_in_Java, id=2761, stack(0x00007f6fdc920000,0x00007f6fdca21000)]
+
+Other Threads:
+  0x00007f6fd4077000 VMThread [stack: 0x00007f6fbda20000,0x00007f6fbdb21000] [id=2766]
+  0x00007f6fd40e3800 WatcherThread [stack: 0x00007f6fbd010000,0x00007f6fbd111000] [id=2774]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 18944K, used 8206K [0x00000000eb200000, 0x00000000ec700000, 0x0000000100000000)
+  eden space 16384K, 50% used [0x00000000eb200000,0x00000000eba039b0,0x00000000ec200000)
+  from space 2560K, 0% used [0x00000000ec480000,0x00000000ec480000,0x00000000ec700000)
+  to   space 2560K, 0% used [0x00000000ec200000,0x00000000ec200000,0x00000000ec480000)
+ ParOldGen       total 44032K, used 0K [0x00000000c1600000, 0x00000000c4100000, 0x00000000eb200000)
+  object space 44032K, 0% used [0x00000000c1600000,0x00000000c1600000,0x00000000c4100000)
+ Metaspace       used 3294K, capacity 4490K, committed 4864K, reserved 1056768K
+  class space    used 341K, capacity 386K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x00007f6fd8d40000,0x00007f6fd8f36000] byte_map_base: 0x00007f6fd8735000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f6fdbbb12c0
+ Begin Bits: [0x00007f6fbe0b0000, 0x00007f6fbf058000)
+ End Bits:   [0x00007f6fbf058000, 0x00007f6fc0000000)
+
+Polling page: 0x00007f6fdca70000
+
+CodeCache: size=245760Kb used=1785Kb max_used=1799Kb free=243974Kb
+ bounds [0x00007f6fc5000000, 0x00007f6fc5270000, 0x00007f6fd4000000]
+ total_blobs=565 nmethods=318 adapters=162
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 50.043 Thread 0x00007f6fd40ad000  314       4       java.nio.ByteBuffer::array (35 bytes)
+Event: 50.044 Thread 0x00007f6fd40ad000 nmethod 314 0x00007f6fc5198550 code [0x00007f6fc51986a0, 0x00007f6fc5198738]
+Event: 50.358 Thread 0x00007f6fd40b0000  315   !   4       java.io.BufferedWriter::write (117 bytes)
+Event: 50.367 Thread 0x00007f6fd40b0000 nmethod 315 0x00007f6fc51ba950 code [0x00007f6fc51baac0, 0x00007f6fc51bb138]
+Event: 50.723 Thread 0x00007f6fd40ad000  316       4       java.io.OutputStreamWriter::write (11 bytes)
+Event: 50.745 Thread 0x00007f6fd40ad000 nmethod 316 0x00007f6fc51bb8d0 code [0x00007f6fc51bbaa0, 0x00007f6fc51bc468]
+Event: 51.019 Thread 0x00007f6fd40b0000  317   !   4       sun.nio.cs.StreamEncoder::flushBuffer (42 bytes)
+Event: 51.050 Thread 0x00007f6fd40b0000 nmethod 317 0x00007f6fc51c3390 code [0x00007f6fc51c35a0, 0x00007f6fc51c4968]
+Event: 52.878 Thread 0x00007f6fd40ad000  318   !   4       java.io.BufferedWriter::flushBuffer (53 bytes)
+Event: 52.881 Thread 0x00007f6fd40ad000 nmethod 318 0x00007f6fc51ba250 code [0x00007f6fc51ba3c0, 0x00007f6fc51ba7a8]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (8 events):
+Event: 0.101 Thread 0x00007f6fd4009800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000eb207ca8) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/
+Event: 0.101 Thread 0x00007f6fd4009800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000eb207f90) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jni.cpp, lin
+Event: 0.217 Thread 0x00007f6fd4009800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb2737d8) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0.217 Thread 0x00007f6fd4009800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb2739e8) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0.217 Thread 0x00007f6fd4009800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb275c58) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0.217 Thread 0x00007f6fd4009800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb275e68) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0.217 Thread 0x00007f6fd4009800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb276b28) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0.217 Thread 0x00007f6fd4009800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eb276d38) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+
+Events (10 events):
+Event: 2.880 loading class sun/nio/ch/FileDispatcher done
+Event: 2.881 loading class sun/nio/ch/FileDispatcherImpl done
+Event: 2.883 loading class sun/nio/ch/IOStatus
+Event: 2.883 loading class sun/nio/ch/IOStatus done
+Event: 4.184 Executing VM operation: EnableBiasedLocking
+Event: 4.184 Executing VM operation: EnableBiasedLocking done
+Event: 4.397 Thread 0x00007f6fd4009800 DEOPT PACKING pc=0x00007f6fc511a5fb sp=0x00007f6fdca1f270
+Event: 4.397 Thread 0x00007f6fd4009800 DEOPT UNPACKING pc=0x00007f6fc5047373 sp=0x00007f6fdca1f0a8 mode 0
+Event: 4.535 Thread 0x00007f6fd4009800 DEOPT PACKING pc=0x00007f6fc5122092 sp=0x00007f6fdca1f460
+Event: 4.535 Thread 0x00007f6fd4009800 DEOPT UNPACKING pc=0x00007f6fc5047373 sp=0x00007f6fdca1f328 mode 0
+
+
+Dynamic libraries:
+
+VM Arguments:
+java_command: events.EchoServer
+java_class_path (initial): .
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/home/HKJeffer/pinpoint/bin:/home/HKJeffer/bin:/home/HKJeffer/.local/bin:/home/HKJeffer/pinpoint/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/ProgramData/Oracle/Java/javapath_target_662322921:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Program Files/Java/jdk1.8.0_144/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/PuTTY:/mnt/c/Program Files (x86)/Skype/Phone:/mnt/c/Program Files/nodejs:/mnt/c/Users/HKJeffer/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/HKJeffer/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Heroku/bin:/mnt/c/Program Files/Gradle/bin:/mnt/c/Users/HKJeffer/AppData/Roaming/npm:/mnt/c/Program Files/Microsoft VS Code/bin:/snap/bin
+SHELL=/bin/bash
+HOSTTYPE=x86_64
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa69040], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa69040], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8b2170], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8b2170], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8b2170], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8b2170], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8b2020], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8b24f0], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8b24f0], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8b24f0], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8b24f0], sa_mask[0]=11111111111111111111111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.3 LTS"
+
+uname:Linux 4.4.0-43-Microsoft #1-Microsoft Wed Dec 31 14:42:53 PST 2014 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 7823, NOFILE 65536, AS infinity
+load average:0.52 0.58 0.59
+
+/proc/meminfo:
+MemTotal:        4097088 kB
+MemFree:         1195904 kB
+Buffers:           34032 kB
+Cached:           188576 kB
+SwapCached:            0 kB
+Active:           167556 kB
+Inactive:         157876 kB
+Active(anon):     103104 kB
+Inactive(anon):    17440 kB
+Active(file):      64452 kB
+Inactive(file):   140436 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:      12582912 kB
+SwapFree:       11908684 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:        102824 kB
+Mapped:            71404 kB
+Shmem:             17720 kB
+Slab:              13868 kB
+SReclaimable:       6744 kB
+SUnreclaim:         7124 kB
+KernelStack:        2848 kB
+PageTables:         2524 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      515524 kB
+Committed_AS:    3450064 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       21296 kB
+VmallocChunk:      66044 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:      2048 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       12280 kB
+DirectMap4M:      897024 kB
+
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i5-4300U CPU @ 1.90GHz
+stepping	: 1
+microcode	: 0xffffffff
+cpu MHz		: 2501.000
+cache size	: 256 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave osxsave avx f16c rdrand
+bogomips	: 5002.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i5-4300U CPU @ 1.90GHz
+stepping	: 1
+microcode	: 0xffffffff
+cpu MHz		: 2501.000
+cache size	: 256 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave osxsave avx f16c rdrand
+bogomips	: 5002.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i5-4300U CPU @ 1.90GHz
+stepping	: 1
+microcode	: 0xffffffff
+cpu MHz		: 2501.000
+cache size	: 256 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave osxsave avx f16c rdrand
+bogomips	: 5002.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i5-4300U CPU @ 1.90GHz
+stepping	: 1
+microcode	: 0xffffffff
+cpu MHz		: 2501.000
+cache size	: 256 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave osxsave avx f16c rdrand
+bogomips	: 5002.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 4097088k(1195908k free), swap 12582912k(11908684k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.151-b12) for linux-amd64 JRE (1.8.0_151-8u151-b12-0ubuntu0.16.04.2-b12), built on Oct 27 2017 21:59:02 by "buildd" with gcc 5.4.0 20160609
+
+time: Thu May  3 00:48:53 2018
+elapsed time: 52 seconds (0d 0h 0m 52s)
+
